@@ -1,0 +1,34 @@
+<div id="main">
+	<div id="right">
+		<div id="righttop">
+        	<h4>[% news1_date %]</h4>
+		<div class="text">
+			<img src="images/pic01.jpg" alt="" title="" style="float:left; padding-right: 10px;" />
+			<p>[% news1 %]</p>
+		<div class="date">
+				<div class="dateright"><a href="#">April 11, 2009</a></div>
+				<div class="dateleft"><a href="#">Comments(14)</a></div>
+		</div></div>
+		<h4>[% news2_date %]</h4>
+		<div class="text">
+			<img src="images/pic02.jpg" alt="" title="" style="float:right; padding-leftt: 10px;" />
+			<p>[% news2 %]</p>
+		<div class="date">
+				<div class="dateright"><a href="#">April 11, 2009</a></div>
+				<div class="dateleft"><a href="#">Comments(14)</a></div>
+		</div></div>
+		<h4>[% news3_date %]</h4>
+                <div class="text">
+                        <img src="images/pic02.jpg" alt="" title="" style="float:right; padding-leftt: 10px;" />
+                        <p>[% news3 %]</p>
+                <div class="date">
+                                <div class="dateright"><a href="#">April 11, 2009</a></div>
+                                <div class="dateleft"><a href="#">Comments(14)</a></div>
+                </div></div>
+
+
+
+
+
+	</div>
+	</div>
