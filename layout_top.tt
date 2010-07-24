@@ -1,12 +1,12 @@
 <div id="header"> 
 	<div id="logo">
-		<h1><a href="#">Aethyra</a></h1>
-		<h2><a href="http://www.metamorphozis.com/" id="metamorph">An open source MMORPG</a></h2>
+		<h1><a href="http://www.aethyraproject.org">Aethyra</a></h1>
+		<h2><a href="http://www.aethyraproject.org" id="home">An open source MMORPG</a></h2>
 	</div>	
 </div>
 	<div id="menu">
 		<ul>
-			<li id="button1"><a href="#" title="">Home</a></li>
+			<li id="button1"><a href="http://www.aethyraproject.org" title="">Home</a></li>
 			<li id="button2"><a href="#" title="">Download</a></li>
 			<li id="button3"><a href="#" title="">Gallery</a></li>
 			<li id="button4"><a href="#" title="">About</a></li>
