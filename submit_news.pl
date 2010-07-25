@@ -9,8 +9,10 @@ open (CONFIG,$config);
 my @config = <CONFIG>;
 my @line = split(":",$config[0]);
 my $online_file = $line[1];
+chomp($online_file);
 @line = split(":",$config[1]);
 my $credential_file = $line[1];
+chomp($credntial_file);
 close(CONFIG);
 #### END CONFIG ####
 
@@ -19,10 +21,13 @@ open(CRED,$credential_file);
 my @creds = <CRED>;
 @line = split(":", $creds[0]);
 my $database = $line[1];
+chomp($database);
 @line = split(":",$creds[1]);
 my $username = $line[1];
+chomp($username);
 @line = split(":",$creds[2]);
 my $password = $line[1];
+chomp($password);
 close(CRED);
 #### END CREDENTIALS #####
 
