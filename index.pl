@@ -60,7 +60,7 @@ $row = @$results[2];
 my $news3 = @$row[1];
 my $news3_date = @$row[2];
 
-my $vars = {'title' => 'Aethyra Project',,'styles' => \@styles,'javascripts' => \@javascripts,'online_players' => $online,'news1' => $news1,'news2' => $news2,'news2' => $news2,'news1_date' => $news1_date,'news2_date' => $news2_date,'news2_date' => $news2_date};
+my $vars = {'title' => 'Aethyra Project','styles' => \@styles,'javascripts' => \@javascripts,'online_players' => $online,'news1' => $news1,'news2' => $news2,'news2' => $news2,'news1_date' => $news1_date,'news2_date' => $news2_date,'news2_date' => $news2_date};
 
 my $file = "index.tt";
 

@@ -1,0 +1,8 @@
+<div id="main">
+	<div id="right">
+		<form action="submit_news.pl" method="POST" id="news_form">
+			<label for="news" id="news_label">Put the news in there -></label>
+			<textarea cols=40 rows=20 id="news_textarea" name="the_news"></textarea>
+			<input type="submit" value="Add It" id="submit_button">
+		</form>
+	</div>
