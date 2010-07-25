@@ -8,7 +8,7 @@
 					<li><a href="#">Downloads</a></li>
 					<li><a href="#">About Aethyra</a></li>
 					<li><a href="#">Team info</a></li>
-					<li><a href="#">Forum</a></li>
+					<li><a href="http://www.aethyraproject.org/forum">Forum</a></li>
 					<li><a href="#">Development</a></li>
 					<li><a href="#">Gallery</a></li>
 					<li><a href="#">Contact Us</a></li>
@@ -19,13 +19,6 @@
 			<div id="partners">
 				<ul>
 					<li>[% online_players %]</li>
-					<!--<li><a href="#">Mauris neque egestas </a></li>-->
-					<!--<li><a href="#">Neque eros a nequesti</a></li>-->
-					<!--<li><a href="#">Primis in faucibus orci </a></li>-->
-					<!--<li><a href="#">Posuere cubilia</a></li>-->
-					<!--<li><a href="#">Ulla risus risus</a></li>-->
-					<!--<li><a href="#">Lobortis sed </a></li>-->
-					<!--<li><a href="#">Donec posuere </a></li>-->
 				</ul>
 			</div>
 	</div>	
