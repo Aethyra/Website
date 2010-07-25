@@ -16,7 +16,7 @@ my $online_file = $line[1];
 chomp($online_file);
 @line = split(":",$config[1]);
 my $credential_file = $line[1];
-chomp($credntial_file);
+chomp($credential_file);
 close(CONFIG);
 #### END CONFIG ####
 
