@@ -6,16 +6,39 @@ use DBI;
 
 my @styles = ("styles/styles.css");
 my @javascripts = ();
+my $config = "/var/aethyra/config";
+
+#### read in config ####
+open (CONFIG,$config);
+my @config = <CONFIG>;
+my @line = split(":",$config[0]);
+my $online_file = $line[1];
+@line = split(":",$config[1]);
+my $credential_file = $line[1];
+close(CONFIG);
+#### END CONFIG ####
 
 #### get online players #####
-open (ONLINE,"/usr/local/eathena/online.txt");
+open (ONLINE,$online_file);
 my @array = <ONLINE>;
 my $online = pop(@array);
 chomp $online;
 close(ONLINE);
 #####################
 
-my $dbh = DBI->connect("dbi:Pg:dbname=aethyra","aethyra","PAssword1234") or die "Database connection failed in index";
+#### database credentials ####
+open(CRED,$credential_file);
+my @creds = <CRED>;
+@line = split(":", $creds[0]);
+my $database = $line[1];
+@line = split(":",$creds[1]);
+my $username = $line[1];
+@line = split(":",$creds[2]);
+my $password = $line[1];
+close(CRED);
+#### END CREDENTIALS #####
+
+my $dbh = DBI->connect("dbi:Pg:dbname=$database",$username,$password) or die "Database connection failed in index";
 my $query = "select * from news order by entered DESC limit 3";
 my $sth = $dbh->prepare($query);
 $sth->execute;
