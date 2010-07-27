@@ -6,9 +6,10 @@
 	<meta name="description" content="" />
 	<title>[% title %]</title>
 	[% FOREACH style IN styles %]
-	<link rel="stylesheet" href="[% style %]" type="text/css" media="screen">
+	<link rel="stylesheet" href="[% style %]" type="text/css" media="screen" />
 	[% END %]
 	[% FOREACH javascript IN javascripts %]
 	<script type="text/javascript" src="[% javascript %]"></script>
 	[% END %]
 </head>
+<body>
