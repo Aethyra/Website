@@ -7,7 +7,7 @@
 	<div id="menu">
 		<ul>
 			<li id="button1"><a href="http://www.aethyraproject.org" title="">Home</a></li>
-			<li id="button2"><a href="#" title="">Download</a></li>
+			<li id="button2"><a href="http://www.aethyraproject.org/downloads.pl" title="">Download</a></li>
 			<li id="button3"><a href="#" title="">Gallery</a></li>
 			<li id="button4"><a href="#" title="">About</a></li>
 			<li id="button5"><a href="#" title="">Contact</a></li>
