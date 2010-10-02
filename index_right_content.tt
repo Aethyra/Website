@@ -3,7 +3,7 @@
 		<div id="righttop">
 	        	<h4>[% news1_date %]</h4>
 			<div class="text">
-				<img src="images/pic01.jpg" alt="" title="" style="float:left; padding-right: 10px;" />
+				<img src="[% news1_image %]" alt="" title="" style="float:left; padding-right: 10px;" />
 				<p>[% news1 %]</p>
 				<div class="date">
 					<div class="dateright"><a href="#">[% news1_date %]</a></div>
@@ -12,7 +12,7 @@
 			</div>
 			<h4>[% news2_date %]</h4>
 			<div class="text">
-				<img src="images/pic02.jpg" alt="" title="" style="float:right; padding-leftt: 10px;" />
+				<img src="[% news2_image %]" alt="" title="" style="float:right; padding-leftt: 10px;" />
 				<p>[% news2 %]</p>
 				<div class="date">
 					<div class="dateright"><a href="#">[% news2_date %]</a></div>
@@ -21,7 +21,7 @@
 			</div>
 			<h4>[% news3_date %]</h4>
 	                <div class="text">
-        	                <img src="images/pic03.jpg" alt="" title="" style="float:left; padding-leftt: 10px;" />
+        	                <img src="[% news3_image %]" alt="" title="" style="float:left; padding-leftt: 10px;" />
                 	        <p>[% news3 %]</p>
 		                <div class="date">
                 	                <div class="dateright"><a href="#">[% news3_date %]</a></div>

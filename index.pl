@@ -17,6 +17,9 @@ chomp($online_file);
 @line = split(":",$config[1]);
 my $credential_file = $line[1];
 chomp($credential_file);
+@line = split(":",$config[2]);
+my $avatar_location = $line[1];
+chomp($avatar_location);
 close(CONFIG);
 #### END CONFIG ####
 
@@ -44,23 +47,68 @@ close(CRED);
 #### END CREDENTIALS #####
 
 my $dbh = DBI->connect("dbi:Pg:dbname=$database",$username,$password) or die "Database connection failed in index";
-my $query = "select * from news order by entered DESC limit 3";
+#my $query = "select * from news order by entered DESC limit 3";
+my $query = "select phpbb_users.username, phpbb_users.user_avatar, phpbb_posts.post_subject, phpbb_posts.post_text, phpbb_posts.post_time FROM phpbb_posts INNER JOIN phpbb_users ON phpbb_posts.poster_id = phpbb_users.user_id where phpbb_posts.post_postcount = 1 and phpbb_posts.forum_id = 38 ORDER BY phpbb_posts.post_time DESC LIMIT 3;"
 my $sth = $dbh->prepare($query);
 $sth->execute;
 my $results = $sth->fetchall_arrayref;
 
-my $row = @$results[0];
+#this should read in all the files in the directory specified in avatar location
+my @avatars = <$avatar_location>;
 
 my $news1 = @$row[1];
 my $news1_date = @$row[2];
+my $news1_image;
+#this method probably isn't the best way to do this because if there were a lot of files in the directory it could become slow and would get slower with more files.  We may never hit that situation.
+foreach my $file (@avatars)
+{
+	#the forum stores the avatars in this format in the database: #inFileName_Random#.#fileExtensionOfFile
+	#in the filesystem though the forum stores the avatar like this: DifferentRandom#_$inFileName.#fileExtension
+	my @stuff = split("_",@$row[1]);
+	my $extension = split(".",@stuff[1]);
+	my $fileName = $stuff[0] . ".$extension";
+	#this should now be #inFileName.#fileExtension example: 2.gif which should match a file listed in the filesystem (minus the random number but regexp takes care of the rest)
+        if($file =~ /$fileName$/)
+	{
+		$news1_image = "forum/images/avatars/upload/$file";
+	}
+}
 $row = @$results[1];
 my $news2 = @$row[1];
 my $news2_date = @$row[2];
+my $news2_image;
+foreach my $file (@avatars)
+{
+        #the forum stores the avatars in this format in the database: #inFileName_Random#.#fileExtensionOfFile
+        #in the filesystem though the forum stores the avatar like this: DifferentRandom#_$inFileName.#fileExtension
+        my @stuff = split("_",@$row[1]);
+        my $extension = split(".",@stuff[1]);
+        my $fileName = $stuff[0] . ".$extension";
+        #this should now be #inFileName.#fileExtension example: 2.gif which should match a file listed in the filesystem (minus the random number but regexp
+        if($file =~ /$fileName$/)
+        {
+                $news2_image = "forum/images/avatars/upload/$file";
+        }
+}
 $row = @$results[2];
 my $news3 = @$row[1];
 my $news3_date = @$row[2];
+my $news3_image;
+foreach my $file (@avatars)
+{
+        #the forum stores the avatars in this format in the database: #inFileName_Random#.#fileExtensionOfFile
+        #in the filesystem though the forum stores the avatar like this: DifferentRandom#_$inFileName.#fileExtension
+        my @stuff = split("_",@$row[1]);
+        my $extension = split(".",@stuff[1]);
+        my $fileName = $stuff[0] . ".$extension";
+        #this should now be #inFileName.#fileExtension example: 2.gif which should match a file listed in the filesystem (minus the random number but regexp
+        if($file =~ /$fileName$/)
+        {
+                $news3_image = "forum/images/avatars/upload/$file";
+        }
+}
 
-my $vars = {'title' => 'Aethyra Project','styles' => \@styles,'javascripts' => \@javascripts,'online_players' => $online,'news1' => $news1,'news2' => $news2,'news2' => $news2,'news1_date' => $news1_date,'news2_date' => $news2_date,'news2_date' => $news2_date};
+my $vars = {'title' => 'Aethyra Project','styles' => \@styles,'javascripts' => \@javascripts,'online_players' => $online,'news1' => $news1,'news2' => $news2,'news2' => $news2,'news1_date' => $news1_date,'news2_date' => $news2_date,'news2_date' => $news2_date, 'news1_image' => $news1_image, 'news2_image' => $news2_image, 'news3_image' => $news3_image};
 
 my $file = "index.tt";
 
