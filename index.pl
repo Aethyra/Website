@@ -56,8 +56,12 @@ my $results = $sth->fetchall_arrayref;
 #this should read in all the files in the directory specified in avatar location
 my @avatars = <$avatar_location>;
 
-my $news1 = @$row[1];
-my $news1_date = @$row[2];
+my $row = @$results[0];
+
+my $news1 = @$row[3];
+my $news1_date = scalar localtime(@$row[4]);
+my $news1_subject = @$row[2];
+my $news1_poster = @$row[0];
 my $news1_image;
 #this method probably isn't the best way to do this because if there were a lot of files in the directory it could become slow and would get slower with more files.  We may never hit that situation.
 foreach my $file (@avatars)
@@ -74,8 +78,10 @@ foreach my $file (@avatars)
 	}
 }
 $row = @$results[1];
-my $news2 = @$row[1];
-my $news2_date = @$row[2];
+my $news2 = @$row[3];
+my $news2_date = scalar localtime(@$row[4]);
+my $news2_subject = @$row[2];
+my $news2_poster = @$row[0];
 my $news2_image;
 foreach my $file (@avatars)
 {
@@ -91,8 +97,10 @@ foreach my $file (@avatars)
         }
 }
 $row = @$results[2];
-my $news3 = @$row[1];
-my $news3_date = @$row[2];
+my $news3 = @$row[3];
+my $news3_date = scalar localtime(@$row[4]);
+my $news3_subject = @$row[2];
+my $news3_poster = @$row[0];
 my $news3_image;
 foreach my $file (@avatars)
 {

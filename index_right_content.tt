@@ -1,30 +1,30 @@
 <div id="main">
 	<div id="right">
 		<div id="righttop">
-	        	<h4>[% news1_date %]</h4>
+			<h4>[% news1_subject %]</h4>
 			<div class="text">
 				<img src="[% news1_image %]" alt="" title="" style="float:left; padding-right: 10px;" />
 				<p>[% news1 %]</p>
 				<div class="date">
-					<div class="dateright"><a href="#">[% news1_date %]</a></div>
+					<div class="dateright"><a href="#">[% news1_date %] by [% news1_poster %]</a></div>
 					<div class="dateleft"><a href="#">Comments(14)</a></div>
 				</div>
 			</div>
-			<h4>[% news2_date %]</h4>
+                        <h4>[% news2_subject %]</h4>
 			<div class="text">
 				<img src="[% news2_image %]" alt="" title="" style="float:right; padding-leftt: 10px;" />
 				<p>[% news2 %]</p>
 				<div class="date">
-					<div class="dateright"><a href="#">[% news2_date %]</a></div>
+					<div class="dateright"><a href="#">[% news2_date %] by [% news2_poster %]</a></div>
 					<div class="dateleft"><a href="#">Comments(14)</a></div>
 				</div>
 			</div>
-			<h4>[% news3_date %]</h4>
+                        <h4>[% news3_subject %]</h4>
 	                <div class="text">
         	                <img src="[% news3_image %]" alt="" title="" style="float:left; padding-leftt: 10px;" />
                 	        <p>[% news3 %]</p>
 		                <div class="date">
-                	                <div class="dateright"><a href="#">[% news3_date %]</a></div>
+                	                <div class="dateright"><a href="#">[% news3_date %] by [% news3_poster %]</a></div>
                         	        <div class="dateleft"><a href="#">Comments(14)</a></div>
 		                </div>
 			</div>
