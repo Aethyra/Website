@@ -5,6 +5,8 @@
 			<div class="text">
 				<p>Since older releases won't work with the new server when we're ready to start testing it, we aren't making available older releases at this time. </p>
 				<p>However, if you wish to follow the current client development though, you can get the latest client using git. Our official git repo can be located <a href=http://github.com/Aethyra/Client>here</a>, and some experimental code which hasn't hit the official repo yet can be found <a http://github.com/Tametomo/Aethyra>here</a>. </p>
+				<p>Windows build resources will be available <a href="http://github.com/Aethyra/windows-build-support">here</a> when they become available.</p>
+				<p>Mac build resources to (potentially) be available after client release, and are not kept up-to-date during development. Mac builds are released unofficially through Allenmoatallen of the <a href="http://lom.newagesoftware.org/">Legends of Mazzeroth</a> project.</p>
 			</div>
         		<h4>Server Downloads</h4>
 			<div class="text">
@@ -12,7 +14,7 @@
 			</div>
         		<h4>Resource Downloads</h4>
 			<div class="text">
-				<p>Client resources are in the process of migration from SVN to Mercurial. Check back later for repo links.</p>
+				<p>The update data we use on the server can be found <a href="http://bitbucket.org/Tametomo/aethyra">here</a>.</p>
 			</div>
                 </div>
 	</div>
