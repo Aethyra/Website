@@ -46,9 +46,9 @@ chomp($password);
 close(CRED);
 #### END CREDENTIALS #####
 
-my $dbh = DBI->connect("dbi:Pg:dbname=$database",$username,$password) or die "Database connection failed in index";
+my $dbh = DBI->connect("dbi:mysql:dbname=$database",$username,$password) or die "Database connection failed in index";
 #my $query = "select * from news order by entered DESC limit 3";
-my $query = "select phpbb_users.username, phpbb_users.user_avatar, phpbb_posts.post_subject, phpbb_posts.post_text, phpbb_posts.post_time FROM phpbb_posts INNER JOIN phpbb_users ON phpbb_posts.poster_id = phpbb_users.user_id where phpbb_posts.post_postcount = 1 and phpbb_posts.forum_id = 38 ORDER BY phpbb_posts.post_time DESC LIMIT 3;"
+my $query = "select phpbb_users.username, phpbb_users.user_avatar, phpbb_posts.post_subject, phpbb_posts.post_text, phpbb_posts.post_time FROM phpbb_posts INNER JOIN phpbb_users ON phpbb_posts.poster_id = phpbb_users.user_id where phpbb_posts.post_postcount = 1 and phpbb_posts.forum_id = 38 ORDER BY phpbb_posts.post_time DESC LIMIT 3";
 my $sth = $dbh->prepare($query);
 $sth->execute;
 my $results = $sth->fetchall_arrayref;
