@@ -116,7 +116,7 @@ foreach my $file (@avatars)
         }
 }
 
-my $vars = {'title' => 'Aethyra Project','styles' => \@styles,'javascripts' => \@javascripts,'online_players' => $online,'news1' => $news1,'news2' => $news2,'news2' => $news2,'news1_date' => $news1_date,'news2_date' => $news2_date,'news2_date' => $news2_date, 'news1_image' => $news1_image, 'news2_image' => $news2_image, 'news3_image' => $news3_image};
+my $vars = {'title' => 'Aethyra Project','styles' => \@styles,'javascripts' => \@javascripts,'online_players' => $online,'news1' => $news1,'news2' => $news2,'news2' => $news2,'news1_date' => $news1_date,'news2_date' => $news2_date,'news2_date' => $news2_date, 'news1_image' => $news1_image, 'news2_image' => $news2_image, 'news3_image' => $news3_image, 'news1_poster' => $news1_poster, 'news2_poster' => $news2_poster, 'news3_poster' => $news3_poster, 'news1_subject' => $news1_subject, 'news2_subject' => $news2_subject, 'news3_subject' => $news3_subject};
 
 my $file = "index.tt";
 
