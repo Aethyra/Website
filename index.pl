@@ -54,7 +54,8 @@ $sth->execute;
 my $results = $sth->fetchall_arrayref;
 
 #this should read in all the files in the directory specified in avatar location
-my @avatars = <$avatar_location>;
+opendir(DIR, $avatar_location);
+my @avatars = readdir(DIR);
 
 my $row = @$results[0];
 
@@ -62,59 +63,21 @@ my $news1 = @$row[3];
 my $news1_date = scalar localtime(@$row[4]);
 my $news1_subject = @$row[2];
 my $news1_poster = @$row[0];
-my $news1_image;
-#this method probably isn't the best way to do this because if there were a lot of files in the directory it could become slow and would get slower with more files.  We may never hit that situation.
-foreach my $file (@avatars)
-{
-	#the forum stores the avatars in this format in the database: #inFileName_Random#.#fileExtensionOfFile
-	#in the filesystem though the forum stores the avatar like this: DifferentRandom#_$inFileName.#fileExtension
-	my @stuff = split("_",@$row[1]);
-	my $extension = split(".",@stuff[1]);
-	my $fileName = $stuff[0] . ".$extension";
-	#this should now be #inFileName.#fileExtension example: 2.gif which should match a file listed in the filesystem (minus the random number but regexp takes care of the rest)
-        if($file =~ /$fileName$/)
-	{
-		$news1_image = "forum/images/avatars/upload/$file";
-	}
-}
+my $news1_image = "forum/download/file.php?avatar=@$row[1]";
+
 $row = @$results[1];
 my $news2 = @$row[3];
 my $news2_date = scalar localtime(@$row[4]);
 my $news2_subject = @$row[2];
 my $news2_poster = @$row[0];
-my $news2_image;
-foreach my $file (@avatars)
-{
-        #the forum stores the avatars in this format in the database: #inFileName_Random#.#fileExtensionOfFile
-        #in the filesystem though the forum stores the avatar like this: DifferentRandom#_$inFileName.#fileExtension
-        my @stuff = split("_",@$row[1]);
-        my $extension = split(".",@stuff[1]);
-        my $fileName = $stuff[0] . ".$extension";
-        #this should now be #inFileName.#fileExtension example: 2.gif which should match a file listed in the filesystem (minus the random number but regexp
-        if($file =~ /$fileName$/)
-        {
-                $news2_image = "forum/images/avatars/upload/$file";
-        }
-}
+my $news2_image = "forum/download/file.php?avatar=@$row[1]";
+
 $row = @$results[2];
 my $news3 = @$row[3];
 my $news3_date = scalar localtime(@$row[4]);
 my $news3_subject = @$row[2];
 my $news3_poster = @$row[0];
-my $news3_image;
-foreach my $file (@avatars)
-{
-        #the forum stores the avatars in this format in the database: #inFileName_Random#.#fileExtensionOfFile
-        #in the filesystem though the forum stores the avatar like this: DifferentRandom#_$inFileName.#fileExtension
-        my @stuff = split("_",@$row[1]);
-        my $extension = split(".",@stuff[1]);
-        my $fileName = $stuff[0] . ".$extension";
-        #this should now be #inFileName.#fileExtension example: 2.gif which should match a file listed in the filesystem (minus the random number but regexp
-        if($file =~ /$fileName$/)
-        {
-                $news3_image = "forum/images/avatars/upload/$file";
-        }
-}
+my $news3_image = "forum/download/file.php?avatar=@$row[1]";
 
 my $vars = {'title' => 'Aethyra Project','styles' => \@styles,'javascripts' => \@javascripts,'online_players' => $online,'news1' => $news1,'news2' => $news2,'news2' => $news2,'news1_date' => $news1_date,'news2_date' => $news2_date,'news2_date' => $news2_date, 'news1_image' => $news1_image, 'news2_image' => $news2_image, 'news3_image' => $news3_image, 'news1_poster' => $news1_poster, 'news2_poster' => $news2_poster, 'news3_poster' => $news3_poster, 'news1_subject' => $news1_subject, 'news2_subject' => $news2_subject, 'news3_subject' => $news3_subject};
 
